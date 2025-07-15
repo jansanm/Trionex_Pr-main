@@ -30,8 +30,13 @@ export default function ContactPage() {
     setIsSubmitting(true)
 
     try {
-      // Simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 1000))
+      // Send form data to API route
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      })
+      if (!response.ok) throw new Error('Failed to send message')
 
       showToast("success", "Message Sent!", "Thank you for contacting us. We'll get back to you soon.")
       setFormData({ name: "", email: "", subject: "", message: "" })

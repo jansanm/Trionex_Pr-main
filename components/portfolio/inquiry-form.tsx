@@ -37,8 +37,13 @@ export function InquiryForm({ portfolioTitle, showButton = true, onClose }: Inqu
     setIsSubmitting(true)
 
     try {
-      // Simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 1000))
+      // Send form data to API route
+      const response = await fetch('/api/inquiry', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...formData, portfolioTitle }),
+      })
+      if (!response.ok) throw new Error('Failed to send inquiry')
 
       showToast("success", "Inquiry Sent!", "We'll contact you within 24 hours.")
       if (!showButton && onClose) {
@@ -71,7 +76,7 @@ export function InquiryForm({ portfolioTitle, showButton = true, onClose }: Inqu
           <div className="bg-gradient-to-br from-blue-50 to-purple-50 p-6 rounded-lg mb-4">
             <h4 className="font-semibold text-gray-900 mb-2">Ready to purchase this portfolio?</h4>
             <p className="text-gray-600 text-sm">Fill out the form below and we'll contact you within 24 hours.</p>
-            <div className="mt-3 text-xs text-gray-500">Contact: smjh5096@gmail.com | +1 (909) 090-9090</div>
+            <div className="mt-3 text-xs text-gray-500">Contact: trionex.services@gmail.com | 6305959473, 6309738873</div>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-4">

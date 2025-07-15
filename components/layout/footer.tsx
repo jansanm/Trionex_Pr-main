@@ -35,7 +35,7 @@ export function Footer() {
               <a href="#" className="text-gray-400 hover:text-white transition-colors">
                 <Instagram className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="https://www.linkedin.com/in/trionex" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
                 <Linkedin className="w-5 h-5" />
               </a>
               <a href="#" className="text-gray-400 hover:text-white transition-colors">
@@ -75,10 +75,11 @@ export function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact Info</h3>
             <ul className="space-y-2 text-gray-400">
-              <li>123 Tech Street</li>
-              <li>San Francisco, CA 94105</li>
-              <li>Phone: (555) 123-4567</li>
-              <li>Email: hello@trionex.com</li>
+              <li>Phone: 6305959473</li>
+              <li>Phone: 6309738873</li>
+              <li>Email: <a href="mailto:trionex.services@gmail.com" className="underline hover:text-white">trionex.services@gmail.com</a></li>
+              <li>Website: <a href="https://www.trionex.com" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">www.trionex.com</a></li>
+              <li>LinkedIn: <a href="https://www.linkedin.com/in/trionex" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">trionex</a></li>
             </ul>
           </div>
         </div>

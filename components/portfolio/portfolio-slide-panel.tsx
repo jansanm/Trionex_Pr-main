@@ -246,19 +246,6 @@ export function PortfolioSlidePanel({ portfolio, isOpen, onClose }: PortfolioSli
               </div>
               <InquiryForm portfolioTitle={portfolio.title} />
             </div>
-
-            {/* Guarantee */}
-            <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-4 border border-blue-200">
-              <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center">
-                  <CheckCircle className="w-5 h-5 text-white" />
-                </div>
-                <div>
-                  <div className="font-bold text-blue-900">30-Day Money Back Guarantee</div>
-                  <div className="text-blue-700 text-sm">Not satisfied? Get a full refund, no questions asked.</div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
