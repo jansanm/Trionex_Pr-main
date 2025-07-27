@@ -132,11 +132,11 @@ export default function ContactPage() {
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">Office Address</h3>
                     <p className="text-gray-600 dark:text-gray-300">
-                      123 Tech Street
+                      11-13-518/1 RD NO 6
                       <br />
-                      San Francisco, CA 94105
+                      HYDERABAD, TELANGANA 500035
                       <br />
-                      United States
+                      INDIA
                     </p>
                   </div>
                 </div>
@@ -147,7 +147,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">Phone Number</h3>
-                    <p className="text-gray-600 dark:text-gray-300">+1 (555) 123-4567</p>
+                    <p className="text-gray-600 dark:text-gray-300">(+91) 6305959473</p>
                   </div>
                 </div>
 
@@ -158,9 +158,9 @@ export default function ContactPage() {
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">Email Address</h3>
                     <p className="text-gray-600 dark:text-gray-300">
-                      hello@trionex.com
+                    trionex.services@gmail.com
                       <br />
-                      support@trionex.com
+                      sripathimanideep2003@gmail.com
                     </p>
                   </div>
                 </div>
@@ -187,29 +187,7 @@ export default function ContactPage() {
       </section>
 
       {/* Map Section */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Find Us Here</h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300">Visit our office or schedule a virtual meeting</p>
-          </div>
-
-          <div className="bg-white dark:bg-gray-900 rounded-lg shadow-lg overflow-hidden">
-            <div className="aspect-w-16 aspect-h-9 h-96">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0197327083845!2d-122.41941548468186!3d37.77492977975903!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085809c6c8f4459%3A0xb10ed6d9b5050fa5!2sSan%20Francisco%2C%20CA%2C%20USA!5e0!3m2!1sen!2sus!4v1635959542000!5m2!1sen!2sus"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                className="w-full h-full"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+      
     </div>
   )
 }

@@ -30,7 +30,7 @@ export default function HomePage() {
             <div className="flex items-center justify-center space-x-3 mb-6">
               <Star className="w-8 h-8 text-amber-500" />
               <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent">
-                Why Choose Trionex?
+                Why Choose Quadrelix Forge?
               </h2>
               <Star className="w-8 h-8 text-amber-500" />
             </div>

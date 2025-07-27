@@ -19,7 +19,7 @@ export function Footer() {
                   className="object-contain"
                 />
               </div>
-              <span className="text-xl font-bold">Trionex</span>
+              <span className="text-xl font-bold">Quadrelix Forge</span>
             </div>
             <p className="text-gray-400 mb-4 max-w-md">
               We create innovative digital solutions that help businesses thrive in the modern world. From web
@@ -35,7 +35,7 @@ export function Footer() {
               <a href="#" className="text-gray-400 hover:text-white transition-colors">
                 <Instagram className="w-5 h-5" />
               </a>
-              <a href="https://www.linkedin.com/in/trionex" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+              <a href="https://www.linkedin.com/company/107867818/admin/dashboard/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
                 <Linkedin className="w-5 h-5" />
               </a>
               <a href="#" className="text-gray-400 hover:text-white transition-colors">
@@ -78,14 +78,14 @@ export function Footer() {
               <li>Phone: 6305959473</li>
               <li>Phone: 6309738873</li>
               <li>Email: <a href="mailto:trionex.services@gmail.com" className="underline hover:text-white">trionex.services@gmail.com</a></li>
-              <li>Website: <a href="https://www.trionex.com" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">www.trionex.com</a></li>
-              <li>LinkedIn: <a href="https://www.linkedin.com/in/trionex" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">trionex</a></li>
+              <li>Website: <a href="https://www.linkedin.com/company/107867818/admin/dashboard/" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">www.Quadrelix Forge.com</a></li>
+              <li>LinkedIn: <a href="https://www.linkedin.com/company/107867818/admin/dashboard/" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">Quadrelix Forge</a></li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; {new Date().getFullYear()} Trionex. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Quadrelix Forge. All rights reserved.</p>
         </div>
       </div>
     </footer>

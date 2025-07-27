@@ -101,7 +101,7 @@ export function HeroSection() {
                     className={`transform transition-all duration-1000 delay-600 ${isLoaded ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
                   >
                     <span className="block text-amber-900 relative">
-                      TRIONEX
+                     Quadrelix Forge
                       <div className="absolute top-0 right-0 w-8 h-8 bg-gradient-to-br from-blue-400 to-cyan-500 rounded-lg -rotate-12 opacity-40" />
                     </span>
                   </div>

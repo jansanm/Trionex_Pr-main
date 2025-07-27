@@ -17,9 +17,9 @@ import { teamData } from "@/lib/data"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Our Services & About Us - Trionex",
+  title: "Our Services & About Us - Quadrelix Forge",
   description:
-    "Learn about Trionex and explore our comprehensive range of technology services including web development, mobile apps, AI solutions, and more.",
+    "Learn about Quadrelix Forge and explore our comprehensive range of technology services including web development, mobile apps, AI solutions, and more.",
 }
 
 const servicesData = [
@@ -124,7 +124,7 @@ const timeline = [
   {
     year: "2019",
     title: "Company Founded",
-    description: "Trionex was established with a vision to transform businesses through technology.",
+    description: "Quadrelix Forge was established with a vision to transform businesses through technology.",
   },
   {
     year: "2020",
@@ -197,7 +197,7 @@ export default function ServicesPage() {
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">Our Mission</h2>
               <p className="text-lg text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-                At Trionex, we believe technology should empower businesses to achieve their full potential. Our mission
+                At Quadrelix Forge, we believe technology should empower businesses to achieve their full potential. Our mission
                 is to create innovative, scalable, and user-centric solutions that solve real-world problems.
               </p>
               <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">

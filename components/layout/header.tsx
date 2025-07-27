@@ -72,7 +72,7 @@ export function Header() {
                   />
                 </div>
                 <span className="text-2xl font-bold bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent">
-                  Trionex
+                Quadrelix Forge
                 </span>
               </Link>
             </div>

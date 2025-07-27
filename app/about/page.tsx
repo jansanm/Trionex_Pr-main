@@ -3,8 +3,8 @@ import { CheckCircle, Award, Users, Lightbulb } from "lucide-react"
 import { teamData } from "@/lib/data"
 
 export const metadata = {
-  title: "About Us - Trionex",
-  description: "Learn about Trionex's mission, values, and the expert team behind our innovative technology solutions.",
+  title: "About Us - Quadrelix Forge",
+  description: "Learn about Quadrelix Forge's mission, values, and the expert team behind our innovative technology solutions.",
 }
 
 export default function AboutPage() {
@@ -12,7 +12,7 @@ export default function AboutPage() {
     {
       year: "2019",
       title: "Company Founded",
-      description: "Trionex was established with a vision to transform businesses through technology.",
+      description: "Quadrelix Forge was established with a vision to transform businesses through technology.",
     },
     {
       year: "2020",
@@ -69,7 +69,7 @@ export default function AboutPage() {
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">About Trionex</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">About Quadrelix Forge</h1>
           <p className="text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed">
             We're a team of passionate technologists dedicated to building innovative solutions that drive business
             growth and create meaningful impact.
@@ -84,7 +84,7 @@ export default function AboutPage() {
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">Our Mission</h2>
               <p className="text-lg text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-                At Trionex, we believe technology should empower businesses to achieve their full potential. Our mission
+                At Quadrelix Forge, we believe technology should empower businesses to achieve their full potential. Our mission
                 is to create innovative, scalable, and user-centric solutions that solve real-world problems.
               </p>
               <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
