@@ -160,7 +160,7 @@ export default function ContactPage() {
                     <p className="text-gray-600 dark:text-gray-300">
                     trionex.services@gmail.com
                       <br />
-                      sripathimanideep2003@gmail.com
+                      flightchallanger21@gmail.com
                     </p>
                   </div>
                 </div>

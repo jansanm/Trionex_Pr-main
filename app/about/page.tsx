@@ -162,39 +162,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Team Section */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Meet Our Team</h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              Our diverse team of experts brings together years of experience and a passion for innovation.
-            </p>
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {teamData.map((member) => (
-              <div
-                key={member.id}
-                className="text-center bg-white dark:bg-gray-900 rounded-lg shadow-md overflow-hidden"
-              >
-                <Image
-                  src={member.image || "/placeholder.svg"}
-                  alt={member.name}
-                  width={300}
-                  height={300}
-                  className="w-full h-64 object-cover"
-                />
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-1">{member.name}</h3>
-                  <p className="text-blue-600 dark:text-blue-400 font-medium mb-3">{member.role}</p>
-                  <p className="text-gray-600 dark:text-gray-300 text-sm">{member.bio}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
     </div>
   )
 }

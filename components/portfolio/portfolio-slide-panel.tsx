@@ -1,30 +1,124 @@
-import {
-  X,
-  ExternalLink,
-  Github,
-  Calendar,
-  Package,
-  ShoppingCart,
-  Sparkles,
-  CheckCircle,
-  Star,
-  Gift,
-  Lock,
-} from "lucide-react"
+"use client"
+
+import { useState, useEffect } from "react"
 import Image from "next/image"
+import { X, ExternalLink, Github, Lock, Package, Gift, Clock, CheckCircle, ShoppingCart } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { InquiryForm } from "./inquiry-form"
+import { InquiryForm } from "@/components/portfolio/inquiry-form"
 import type { Portfolio } from "@/lib/types"
-import { useState } from "react"
 
 interface PortfolioSlidePanelProps {
   portfolio: Portfolio | null
   isOpen: boolean
   onClose: () => void
+  currentPage?: number
 }
 
-export function PortfolioSlidePanel({ portfolio, isOpen, onClose }: PortfolioSlidePanelProps) {
-  if (!portfolio) return null
+// Timer component for the first page
+function CountdownTimer() {
+  const [timeLeft, setTimeLeft] = useState({
+    days: 7,
+    hours: 0,
+    minutes: 0,
+    seconds: 0
+  })
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft(prevTime => {
+        let { days, hours, minutes, seconds } = prevTime
+        
+        if (seconds > 0) {
+          seconds--
+        } else {
+          seconds = 59
+          if (minutes > 0) {
+            minutes--
+          } else {
+            minutes = 59
+            if (hours > 0) {
+              hours--
+            } else {
+              hours = 23
+              if (days > 0) {
+                days--
+              } else {
+                // Reset to 7 days when timer reaches 0
+                days = 7
+                hours = 0
+                minutes = 0
+                seconds = 0
+              }
+            }
+          }
+        }
+        
+        return { days, hours, minutes, seconds }
+      })
+    }, 1000)
+
+    return () => clearInterval(timer)
+  }, [])
+
+  return (
+    <div className="bg-gradient-to-r from-red-500 to-orange-500 text-white rounded-xl p-3 mb-4">
+      <div className="flex items-center justify-center space-x-1 mb-2">
+        <Clock className="w-4 h-4" />
+        <span className="text-sm font-semibold">🔥 LIMITED TIME SALE - ENDS IN:</span>
+      </div>
+      <div className="flex justify-center space-x-2 text-center">
+        <div className="bg-white/20 rounded-lg p-2 min-w-[50px]">
+          <div className="text-lg font-bold">{timeLeft.days.toString().padStart(2, '0')}</div>
+          <div className="text-xs">Days</div>
+        </div>
+        <div className="bg-white/20 rounded-lg p-2 min-w-[50px]">
+          <div className="text-lg font-bold">{timeLeft.hours.toString().padStart(2, '0')}</div>
+          <div className="text-xs">Hours</div>
+        </div>
+        <div className="bg-white/20 rounded-lg p-2 min-w-[50px]">
+          <div className="text-lg font-bold">{timeLeft.minutes.toString().padStart(2, '0')}</div>
+          <div className="text-xs">Mins</div>
+        </div>
+        <div className="bg-white/20 rounded-lg p-2 min-w-[50px]">
+          <div className="text-lg font-bold">{timeLeft.seconds.toString().padStart(2, '0')}</div>
+          <div className="text-xs">Secs</div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export function PortfolioSlidePanel({ portfolio, isOpen, onClose, currentPage = 1 }: PortfolioSlidePanelProps) {
+  const [isCodeLockedOpen, setIsCodeLockedOpen] = useState(false)
+  const [isBuyFormOpen, setIsBuyFormOpen] = useState(false)
+
+  // Calculate pricing based on page
+  const getPricing = () => {
+    if (currentPage === 1) {
+      return {
+        currentPrice: 49,
+        originalPrice: 129,
+        discount: Math.round(((129 - 49) / 129) * 100)
+      }
+    } else {
+      return {
+        currentPrice: 39,
+        originalPrice: 119,
+        discount: Math.round(((119 - 39) / 119) * 100)
+      }
+    }
+  }
+
+  const pricing = getPricing()
+
+  const packageIncludes = [
+    { item: "Complete Source Code", icon: "📁" },
+    { item: "Documentation", icon: "📚" },
+    { item: "Setup Instructions", icon: "⚙️" },
+    { item: "Lifetime Updates", icon: "🔄" },
+    { item: "Email Support", icon: "📧" },
+    { item: "Commercial License", icon: "📄" }
+  ]
 
   const portfolioFeatures = [
     "Complete source code with documentation",
@@ -37,46 +131,55 @@ export function PortfolioSlidePanel({ portfolio, isOpen, onClose }: PortfolioSli
     "Commercial license included",
   ]
 
-  const packageIncludes = [
-    { item: "HTML/CSS/JS Files", icon: "📁" },
-    { item: "Design Assets (PSD/Figma)", icon: "🎨" },
-    { item: "Documentation", icon: "📚" },
-    { item: "Setup Instructions", icon: "⚙️" },
-    { item: "Font Files", icon: "🔤" },
-    { item: "Image Assets", icon: "🖼️" },
-  ]
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden"
+    } else {
+      document.body.style.overflow = "unset"
+    }
 
-  const [isCodeLockedOpen, setIsCodeLockedOpen] = useState(false)
-  const [isBuyFormOpen, setIsBuyFormOpen] = useState(false)
+    return () => {
+      document.body.style.overflow = "unset"
+    }
+  }, [isOpen])
+
+  if (!portfolio) return null
 
   return (
     <>
       {/* Backdrop */}
       <div
-        className={`fixed inset-0 bg-black/20 backdrop-blur-sm z-40 transition-opacity duration-500 ${
+        className={`fixed inset-0 bg-black/50 backdrop-blur-sm z-50 transition-opacity duration-300 ${
           isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
         onClick={onClose}
       />
 
-      {/* Slide Panel */}
-      <div className={`fixed top-0 right-0 h-full w-full md:w-1/2 z-50 slide-panel ${isOpen ? "open" : ""}`}>
-        <div className="h-full warm-glass border-l border-amber-200 shadow-2xl overflow-y-auto">
+      {/* Panel */}
+      <div
+        className={`fixed right-0 top-0 h-full w-full max-w-2xl bg-white shadow-2xl z-50 transform transition-transform duration-300 ease-in-out ${
+          isOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        <div className="h-full flex flex-col">
           {/* Header */}
-          <div className="sticky top-0 warm-glass border-b border-amber-200 p-6 flex items-center justify-between">
-            <div className="flex items-center space-x-3">
-              <Sparkles className="w-6 h-6 text-amber-600" />
-              <h2 className="text-xl font-bold text-amber-900">Portfolio Details</h2>
-            </div>
-            <Button variant="ghost" size="sm" onClick={onClose}>
-              <X className="w-5 h-5" />
-            </Button>
+          <div className="flex items-center justify-between p-6 border-b border-gray-200">
+            <h2 className="text-2xl font-bold text-gray-900">Portfolio Details</h2>
+            <button
+              onClick={onClose}
+              className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+            >
+              <X className="w-6 h-6" />
+            </button>
           </div>
 
           {/* Content */}
-          <div className="p-6 space-y-8">
-            {/* Hero Image */}
-            <div className="relative rounded-3xl overflow-hidden">
+          <div className="flex-1 overflow-y-auto p-6 space-y-6">
+            {/* Timer for all pages */}
+            <CountdownTimer />
+
+            {/* Portfolio Image */}
+            <div className="relative rounded-2xl overflow-hidden">
               <Image
                 src={portfolio.image || "/placeholder.svg"}
                 alt={portfolio.title}
@@ -84,32 +187,17 @@ export function PortfolioSlidePanel({ portfolio, isOpen, onClose }: PortfolioSli
                 height={400}
                 className="w-full h-64 object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-              <div className="absolute bottom-4 left-4">
-                <span className="bg-gradient-to-r from-amber-400 to-orange-400 text-white px-4 py-2 rounded-full text-sm font-bold">
-                  {portfolio.category}
-                </span>
-              </div>
-              <div className="absolute top-4 right-4">
-                <div className="flex items-center space-x-1 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1">
-                  <Star className="w-4 h-4 text-yellow-500 fill-current" />
-                  <span className="text-sm font-bold text-gray-800">4.9</span>
-                </div>
-              </div>
             </div>
 
-            {/* Title and Meta */}
+            {/* Portfolio Info */}
             <div className="space-y-4">
-              <h1 className="text-3xl font-bold text-amber-900">{portfolio.title}</h1>
-
-              <div className="flex items-center space-x-4 text-sm text-amber-700">
-                <div className="flex items-center space-x-1">
-                  <Calendar className="w-4 h-4" />
-                  <span>{new Date(portfolio.createdAt).toLocaleDateString()}</span>
-                </div>
-                <div className="flex items-center space-x-1">
-                  <Package className="w-4 h-4" />
-                  <span>Complete Package</span>
+              <div>
+                <h1 className="text-3xl font-bold text-gray-900 mb-2">{portfolio.title}</h1>
+                <div className="flex items-center space-x-4 text-sm text-gray-600">
+                  <div className="flex items-center space-x-1">
+                    <Package className="w-4 h-4" />
+                    <span>Complete Package</span>
+                  </div>
                 </div>
               </div>
 
@@ -120,15 +208,18 @@ export function PortfolioSlidePanel({ portfolio, isOpen, onClose }: PortfolioSli
             <div className="bg-gradient-to-br from-green-100 to-emerald-100 rounded-3xl p-6 border border-green-200">
               <div className="flex items-center justify-between mb-4">
                 <div>
-                  <div className="text-3xl font-bold text-green-800">$299</div>
+                  <div className="text-3xl font-bold text-green-800">${pricing.currentPrice}</div>
                   <div className="text-green-600 text-sm">One-time purchase</div>
                 </div>
                 <div className="text-right">
-                  <div className="text-sm text-green-600 line-through">$499</div>
-                  <div className="bg-red-500 text-white px-2 py-1 rounded-full text-xs font-bold">40% OFF</div>
+                  <div className="text-sm text-green-600 line-through">${pricing.originalPrice}</div>
+                  <div className="bg-red-500 text-white px-2 py-1 rounded-full text-xs font-bold">{pricing.discount}% OFF</div>
                 </div>
               </div>
-              <div className="text-green-700 text-sm">✨ Limited time offer - Save $200!</div>
+              <div className="text-green-700 text-sm">
+                ✨ Limited time offer - Save ${pricing.originalPrice - pricing.currentPrice}!
+                🔥 FLASH SALE - 7 DAYS ONLY!
+              </div>
             </div>
 
             {/* Action Buttons */}
@@ -252,3 +343,4 @@ export function PortfolioSlidePanel({ portfolio, isOpen, onClose }: PortfolioSli
     </>
   )
 }
+

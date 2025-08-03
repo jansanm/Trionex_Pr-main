@@ -202,7 +202,7 @@ export default function PortfolioPage() {
       </section>
 
       {/* Slide Panel */}
-      <PortfolioSlidePanel portfolio={selectedPortfolio} isOpen={isPanelOpen} onClose={handleClosePanel} />
+      <PortfolioSlidePanel portfolio={selectedPortfolio} isOpen={isPanelOpen} onClose={handleClosePanel} currentPage={currentPage} />
     </div>
   )
 }
