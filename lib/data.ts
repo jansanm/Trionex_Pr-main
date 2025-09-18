@@ -1,4 +1,4 @@
-import type { Portfolio, Service, TeamMember, Testimonial, ContactMessage, DashboardStats } from "./types"
+import type { Portfolio, Service, TeamMember, ContactMessage, DashboardStats } from "./types"
 
 export const portfolioData: Portfolio[] = [
   {
@@ -1009,34 +1009,7 @@ export const teamData: TeamMember[] = [
   },
 ]
 
-export const testimonialsData: Testimonial[] = [
-  {
-    id: "1",
-    name: "John Smith",
-    role: "CTO",
-    company: "TechStartup Inc",
-    content:
-      "Their software engineering expertise helped us build a scalable platform that handles millions of users seamlessly.",
-    avatar: "/placeholder.svg?height=60&width=60",
-  },
-  {
-    id: "2",
-    name: "Lisa Wang",
-    role: "Product Manager",
-    company: "InnovateApp",
-    content:
-      "The UI/UX design work transformed our user experience completely. Our engagement rates increased by 300%.",
-    avatar: "/placeholder.svg?height=60&width=60",
-  },
-  {
-    id: "3",
-    name: "Robert Brown",
-    role: "Engineering Director",
-    company: "CloudTech Solutions",
-    content: "Outstanding DevOps implementation. Our deployment time reduced from hours to minutes with zero downtime.",
-    avatar: "/placeholder.svg?height=60&width=60",
-  },
-]
+ 
 
 export const mockMessages: ContactMessage[] = [
   {

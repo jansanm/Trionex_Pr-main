@@ -3,7 +3,6 @@
 import Link from "next/link"
 import { ArrowRight, Zap, Shield, Users, Star, Award, Target, Sparkles } from "lucide-react"
 import { HeroSection } from "@/components/home/hero-section"
-import { TestimonialsSection } from "@/components/home/testimonials-section"
 import { IndustriesSection } from "@/components/home/industries-section"
 import { ProcessSection } from "@/components/home/process-section"
 import { PortfolioCard } from "@/components/portfolio/portfolio-card"
@@ -122,7 +121,6 @@ export default function HomePage() {
 
       <IndustriesSection />
       <ProcessSection />
-      <TestimonialsSection />
 
       {/* CTA Section */}
       <section className="py-20 relative overflow-hidden">
